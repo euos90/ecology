@@ -1,0 +1,2754 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Портал отходов">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta name="application-name" content="Портал обращения с отходами">
+    <meta name="description" content="Портал обращения с отходами — управление логистикой и документами">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%230d0d0d'/%3E%3Crect x='10' y='10' width='160' height='160' rx='28' fill='none' stroke='%23f5c518' stroke-width='2'/%3E%3Ctext x='90' y='82' font-family='system-ui, sans-serif' font-size='40' font-weight='700' fill='%23f5c518' text-anchor='middle'%3E♻%3C/text%3E%3Ctext x='90' y='120' font-family='system-ui, sans-serif' font-size='16' font-weight='500' fill='%23cccccc' text-anchor='middle'%3EОТХОДЫ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="152x152" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Crect width='152' height='152' rx='30' fill='%230d0d0d'/%3E%3Crect x='8' y='8' width='136' height='136' rx='24' fill='none' stroke='%23f5c518' stroke-width='2'/%3E%3Ctext x='76' y='70' font-family='system-ui, sans-serif' font-size='34' font-weight='700' fill='%23f5c518' text-anchor='middle'%3E♻%3C/text%3E%3Ctext x='76' y='102' font-family='system-ui, sans-serif' font-size='13' font-weight='500' fill='%23cccccc' text-anchor='middle'%3EОТХОДЫ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="120x120" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%230d0d0d'/%3E%3Crect x='6' y='6' width='108' height='108' rx='18' fill='none' stroke='%23f5c518' stroke-width='2'/%3E%3Ctext x='60' y='56' font-family='system-ui, sans-serif' font-size='28' font-weight='700' fill='%23f5c518' text-anchor='middle'%3E♻%3C/text%3E%3Ctext x='60' y='82' font-family='system-ui, sans-serif' font-size='11' font-weight='500' fill='%23cccccc' text-anchor='middle'%3EОТХОДЫ%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="76x76" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Crect width='76' height='76' rx='16' fill='%230d0d0d'/%3E%3Crect x='4' y='4' width='68' height='68' rx='12' fill='none' stroke='%23f5c518' stroke-width='2'/%3E%3Ctext x='38' y='38' font-family='system-ui, sans-serif' font-size='20' font-weight='700' fill='%23f5c518' text-anchor='middle'%3E♻%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0d0d'/%3E%3Crect x='4' y='4' width='56' height='56' rx='10' fill='none' stroke='%23f5c518' stroke-width='2'/%3E%3Ctext x='32' y='36' font-family='system-ui, sans-serif' font-size='24' font-weight='700' fill='%23f5c518' text-anchor='middle'%3E♻%3C/text%3E%3C/svg%3E">
+
+    <link rel="manifest" href="data:application/json,%7B%22name%22%3A%22%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB%20%D0%BE%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%20%D0%BE%D1%82%D1%85%D0%BE%D0%B4%D0%B0%D0%BC%D0%B8%22%2C%22short_name%22%3A%22%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB%20%D0%BE%D1%82%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%22%2C%22description%22%3A%22%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%BE%D0%B9%20%D0%B8%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%230d0d0d%22%2C%22theme_color%22%3A%22%230d0d0d%22%7D">
+    
+    <!-- Яндекс Карты API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ_яндекс_api&lang=ru_RU" type="text/javascript"></script>
+    
+    <title>Портал обращения с отходами</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, system-ui, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            background: #0d0d0d;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0d0d0d;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .app-card {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            background: #0d0d0d;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            padding: max(20px, env(safe-area-inset-top, 20px)) 
+                     max(16px, env(safe-area-inset-right, 16px)) 
+                     max(20px, env(safe-area-inset-bottom, 20px)) 
+                     max(16px, env(safe-area-inset-left, 16px));
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (display-mode: standalone) {
+            .app-card {
+                padding: 20px;
+                padding-top: max(20px, env(safe-area-inset-top, 20px));
+                padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+            }
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .app-card {
+                padding-top: max(20px, env(safe-area-inset-top, 20px)) !important;
+                padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
+                padding-left: max(16px, env(safe-area-inset-left, 16px)) !important;
+                padding-right: max(16px, env(safe-area-inset-right, 16px)) !important;
+                height: 100%;
+                min-height: 100%;
+            }
+        }
+
+        .app-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #f5c518;
+            position: relative;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 4px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            width: 28px;
+        }
+
+        .header-left .logout-btn {
+            background: transparent;
+            border: none;
+            color: #f5c518;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header-left .logout-btn:active {
+            transform: scale(0.85);
+            color: #e0b010;
+        }
+
+        .header-left .logout-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: #f5c518;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .portal-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #f5c518 0%, #f0b800 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            text-shadow: 0 0 24px rgba(245, 197, 24, 0.08);
+            flex: 1;
+        }
+
+        .burger-btn {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4px 0;
+            cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            flex-shrink: 0;
+            margin-left: 8px;
+            background: transparent;
+            border: none;
+        }
+
+        .burger-btn .line {
+            width: 100%;
+            height: 3px;
+            background: #f5c518;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .burger-btn:active .line {
+            background: #e0b010;
+            transform: scale(0.9);
+        }
+
+        .location-wrapper {
+            margin-top: 8px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .location-btn {
+            background: transparent;
+            border: 1px solid #3a3a3a;
+            border-radius: 20px;
+            padding: 6px 20px;
+            color: #cccccc;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .location-btn:active {
+            background: rgba(245, 197, 24, 0.1);
+            border-color: #f5c518;
+            transform: scale(0.95);
+        }
+
+        .location-btn .arrow {
+            font-size: 10px;
+            color: #888;
+        }
+
+        .divider-glow {
+            width: 40px;
+            height: 3px;
+            background: #f5c518;
+            border-radius: 4px;
+            margin: 12px auto 0;
+            opacity: 0.4;
+        }
+
+        .toast-notification {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-120px);
+            background: #1a1a1a;
+            border: 1px solid #f5c518;
+            border-radius: 16px;
+            padding: 14px 24px;
+            padding-top: max(14px, env(safe-area-inset-top, 14px));
+            color: #f0f0f0;
+            font-size: 15px;
+            font-weight: 500;
+            z-index: 3000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            max-width: 90%;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            margin-top: env(safe-area-inset-top, 0px);
+        }
+
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @media (display-mode: standalone) {
+            .toast-notification {
+                top: env(safe-area-inset-top, 0px);
+                margin-top: 0;
+                padding-top: max(14px, env(safe-area-inset-top, 14px));
+            }
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .toast-notification {
+                top: env(safe-area-inset-top, 0px);
+                padding-top: max(14px, env(safe-area-inset-top, 14px));
+            }
+        }
+
+        .auth-section {
+            transition: all 0.5s ease;
+            overflow: hidden;
+            max-height: 300px;
+            opacity: 1;
+            margin-bottom: 10px;
+        }
+
+        .auth-section.hidden {
+            max-height: 0;
+            opacity: 0;
+            margin: 0;
+            padding: 0;
+            pointer-events: none;
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 14px;
+        }
+
+        .auth-form label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #cccccc;
+            margin-bottom: 6px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #1a1a1a;
+            border: 1px solid #2e2e2e;
+            border-radius: 16px;
+            color: #f0f0f0;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .auth-form input:focus {
+            border-color: #f5c518;
+            box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15);
+        }
+
+        .auth-form input::placeholder {
+            color: #6a6a6a;
+            font-weight: 300;
+        }
+
+        .auth-form .auth-error {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .auth-form .auth-error.active {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+            20%, 40%, 60%, 80% { transform: translateX(8px); }
+        }
+
+        .auth-btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 10px 0 20px;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            max-height: 80px;
+            opacity: 1;
+        }
+
+        .auth-btn-wrapper.hidden {
+            max-height: 0;
+            opacity: 0;
+            margin: 0;
+            padding: 0;
+            pointer-events: none;
+        }
+
+        .auth-btn {
+            background: #f5c518;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 60px;
+            padding: 18px 48px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(245, 197, 24, 0.3);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            letter-spacing: 0.02em;
+            width: 100%;
+            position: relative;
+        }
+
+        .auth-btn:active {
+            transform: scale(0.96);
+            background: #e0b010;
+            transition-duration: 0.05s;
+        }
+
+        .auth-btn.loading {
+            pointer-events: none;
+            background: #4a4a4a;
+            color: #888;
+        }
+
+        .auth-btn .btn-text {
+            display: block;
+        }
+
+        .auth-btn.loading .btn-text {
+            display: none;
+        }
+
+        .progress-bar-wrapper {
+            display: none;
+            width: 100%;
+            margin-top: 6px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 6px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .progress-bar-wrapper.active {
+            display: block;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0a0a0a 0%, #f5c518 50%, #0a0a0a 100%);
+            background-size: 200% 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            animation: progressGradient 1.2s ease infinite;
+        }
+
+        .progress-bar-fill.animating {
+            animation: progressFill 2.5s ease forwards, progressGradient 1.2s ease infinite;
+        }
+
+        .progress-bar-fill.doc-animating {
+            animation: progressFill 3s ease forwards, progressGradient 1.2s ease infinite;
+        }
+
+        @keyframes progressFill {
+            0% { width: 0%; }
+            10% { width: 12%; }
+            25% { width: 28%; }
+            40% { width: 45%; }
+            55% { width: 60%; }
+            70% { width: 75%; }
+            85% { width: 88%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes progressGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .main-content {
+            display: none;
+            animation: slideFade 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .main-content.active {
+            display: block;
+        }
+
+        @keyframes slideFade {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .main-content.fade-out {
+            animation: slideFadeOut 0.6s ease forwards;
+        }
+
+        @keyframes slideFadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+                filter: blur(4px);
+            }
+        }
+
+        .grid-buttons .btn-grid {
+            opacity: 0;
+            animation: fadeUp 0.4s ease forwards;
+            transform: translateY(20px);
+        }
+
+        .grid-buttons .btn-grid:nth-child(1) { animation-delay: 0.05s; }
+        .grid-buttons .btn-grid:nth-child(2) { animation-delay: 0.10s; }
+        .grid-buttons .btn-grid:nth-child(3) { animation-delay: 0.15s; }
+        .grid-buttons .btn-grid:nth-child(4) { animation-delay: 0.20s; }
+        .grid-buttons .btn-grid:nth-child(5) { animation-delay: 0.25s; }
+        .grid-buttons .btn-grid:nth-child(6) { animation-delay: 0.30s; }
+        .grid-buttons .btn-grid:nth-child(7) { animation-delay: 0.35s; }
+        .grid-buttons .btn-grid:nth-child(8) { animation-delay: 0.40s; }
+        .grid-buttons .btn-grid:nth-child(9) { animation-delay: 0.45s; }
+        .grid-buttons .btn-grid:nth-child(10) { animation-delay: 0.50s; }
+        .grid-buttons .btn-grid:nth-child(11) { animation-delay: 0.55s; }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-area {
+            opacity: 0;
+            animation: fadeUp 0.4s ease 0.5s forwards;
+            transform: translateY(20px);
+        }
+
+        .output-box {
+            opacity: 0;
+            animation: fadeUp 0.4s ease 0.55s forwards;
+            transform: translateY(20px);
+        }
+
+        .grid-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .btn-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f5c518;
+            border: 1px solid #f5c518;
+            border-radius: 20px;
+            padding: 16px 6px;
+            color: #0a0a0a;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                        box-shadow 0.2s ease,
+                        background 0.2s ease;
+            box-shadow: 0 6px 16px rgba(245, 197, 24, 0.25);
+            -webkit-tap-highlight-color: transparent;
+            min-height: 76px;
+            text-align: center;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            position: relative;
+            transform: scale(1);
+            touch-action: manipulation;
+            -webkit-touch-callout: none;
+            user-select: none;
+        }
+
+        .btn-grid:active {
+            transform: scale(0.88) !important;
+            background: #e0b010;
+            box-shadow: 0 2px 8px rgba(245, 197, 24, 0.3);
+            transition-duration: 0.05s;
+        }
+
+        .btn-grid .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0a0a0a;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .btn-grid .label strong {
+            font-weight: 700;
+            color: #0a0a0a;
+        }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInOverlay 0.3s ease;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            padding: 20px;
+        }
+
+        .menu-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeInOverlay {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .menu-popup {
+            background: #1a1a1a;
+            border-radius: 32px;
+            padding: 32px 24px 28px;
+            min-width: 280px;
+            max-width: 90vw;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid #f5c518;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8);
+            animation: slideUpMenu 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            margin: auto;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideUpMenu {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .menu-popup .menu-title {
+            color: #f5c518;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 12px;
+        }
+
+        .menu-popup .menu-item {
+            display: block;
+            width: 100%;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            background: #2a2a2a;
+            border: 1px solid #3a3a3a;
+            border-radius: 16px;
+            color: #f0f0f0;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .menu-popup .menu-item:active {
+            transform: scale(0.95);
+            background: #3a3a3a;
+            transition-duration: 0.05s;
+        }
+
+        .menu-popup .menu-close {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            background: transparent;
+            border: 1px solid #4a4a4a;
+            border-radius: 16px;
+            color: #888;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .menu-popup .menu-close:active {
+            transform: scale(0.95);
+            background: #2a2a2a;
+            transition-duration: 0.05s;
+        }
+
+        .info-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1500;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInOverlay 0.3s ease;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            padding: 20px;
+        }
+
+        .info-overlay.active {
+            display: flex;
+        }
+
+        .info-popup {
+            background: #1a1a1a;
+            border-radius: 32px;
+            padding: 32px 24px 28px;
+            min-width: 280px;
+            max-width: 90vw;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid #f5c518;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8);
+            animation: slideUpMenu 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            margin: auto;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .info-popup .info-title {
+            color: #f5c518;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 12px;
+        }
+
+        .info-popup .info-content {
+            color: #f0f0f0;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 8px 0;
+        }
+
+        .info-popup .info-content .highlight {
+            color: #f5c518;
+            font-weight: 600;
+        }
+
+        .info-popup .info-content .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .info-popup .info-content .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-popup .info-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .info-popup .info-actions button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .info-popup .info-actions button:active {
+            transform: scale(0.95);
+            transition-duration: 0.05s;
+        }
+
+        .info-popup .btn-close {
+            background: transparent;
+            border: 1px solid #4a4a4a;
+            color: #888;
+        }
+
+        .info-popup .btn-close:active {
+            background: #2a2a2a;
+        }
+
+        .info-popup .btn-action-success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .info-popup .btn-action-success:active {
+            background: #388E3C;
+        }
+
+        .message-area {
+            margin: 24px 0 18px;
+        }
+
+        .message-area label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #cccccc;
+            margin-bottom: 10px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #1a1a1a;
+            border-radius: 60px;
+            padding: 4px 4px 4px 4px;
+            border: 1px solid #2e2e2e;
+            transition: border 0.2s, box-shadow 0.2s;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: #f5c518;
+            box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15);
+        }
+
+        .input-wrapper input {
+            flex: 1;
+            border: none;
+            padding: 14px 0;
+            padding-left: 16px;
+            font-size: 16px;
+            background: transparent;
+            outline: none;
+            color: #f0f0f0;
+            min-width: 0;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: default;
+        }
+
+        .input-wrapper input::placeholder {
+            color: #6a6a6a;
+            font-weight: 300;
+            font-size: 15px;
+        }
+
+        .file-btn {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 40px;
+            background: transparent;
+            border: 2px solid #3a3a3a;
+            color: #f5c518;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            font-weight: 300;
+            touch-action: manipulation;
+            margin-left: 2px;
+        }
+
+        .file-btn:active {
+            transform: scale(0.88);
+            background: rgba(245, 197, 24, 0.1);
+            border-color: #f5c518;
+            transition-duration: 0.05s;
+        }
+
+        .send-btn {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 40px;
+            background: #f5c518;
+            border: none;
+            color: #0a0a0a;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(245, 197, 24, 0.25);
+            -webkit-tap-highlight-color: transparent;
+            font-weight: 700;
+            position: relative;
+            touch-action: manipulation;
+        }
+
+        .send-btn:active {
+            transform: scale(0.88);
+            background: #e0b010;
+            transition-duration: 0.05s;
+        }
+
+        .send-btn.loading {
+            pointer-events: none;
+            background: #4a4a4a;
+        }
+
+        .send-btn .send-icon {
+            display: block;
+        }
+
+        .send-btn.loading .send-icon {
+            display: none;
+        }
+
+        .doc-progress-wrapper {
+            display: none;
+            width: 100%;
+            margin-top: 6px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 6px;
+            border: 1px solid #2a2a2a;
+            flex-basis: 100%;
+        }
+
+        .doc-progress-wrapper.active {
+            display: block;
+        }
+
+        .doc-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0a0a0a 0%, #f5c518 50%, #0a0a0a 100%);
+            background-size: 200% 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .doc-progress-fill.doc-animating {
+            animation: progressFill 3s ease forwards, progressGradient 1.2s ease infinite;
+        }
+
+        .output-box {
+            margin-top: 24px;
+            padding: 14px 18px;
+            background: #1a1a1a;
+            border-radius: 28px;
+            border: 1px solid #2a2a2a;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .output-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #888888;
+            margin-bottom: 4px;
+            font-weight: 400;
+        }
+
+        .output-message {
+            font-size: 13px;
+            font-weight: 400;
+            color: #f0f0f0;
+            word-break: break-word;
+            line-height: 1.5;
+            min-height: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .output-message .company-name {
+            color: #f5c518;
+            font-weight: 600;
+        }
+
+        .output-message .company-inn {
+            color: #aaaaaa;
+            font-size: 12px;
+        }
+
+        .doc-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInOverlay 0.3s ease;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            padding: 20px;
+        }
+
+        .doc-menu-overlay.active {
+            display: flex;
+        }
+
+        .doc-menu-popup {
+            background: #1a1a1a;
+            border-radius: 32px;
+            padding: 32px 24px 28px;
+            min-width: 280px;
+            max-width: 90vw;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid #f5c518;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8);
+            animation: slideUpMenu 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            margin: auto;
+        }
+
+        .doc-menu-popup .doc-menu-title {
+            color: #f5c518;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 12px;
+        }
+
+        .doc-menu-popup .doc-menu-item {
+            display: block;
+            width: 100%;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            background: #2a2a2a;
+            border: 1px solid #3a3a3a;
+            border-radius: 16px;
+            color: #f0f0f0;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .doc-menu-popup .doc-menu-item:active {
+            transform: scale(0.95);
+            background: #3a3a3a;
+            transition-duration: 0.05s;
+        }
+
+        .doc-menu-popup .doc-menu-close {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            background: transparent;
+            border: 1px solid #4a4a4a;
+            border-radius: 16px;
+            color: #888;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .doc-menu-popup .doc-menu-close:active {
+            transform: scale(0.95);
+            background: #2a2a2a;
+            transition-duration: 0.05s;
+        }
+
+        .file-upload-area {
+            border: 2px dashed #3a3a3a;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            color: #888;
+            margin: 12px 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .file-upload-area:active {
+            border-color: #f5c518;
+            background: rgba(245, 197, 24, 0.05);
+        }
+
+        .file-upload-area .upload-icon {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .file-upload-area .upload-text {
+            font-size: 14px;
+        }
+
+        .send-act-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            background: #f5c518;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .send-act-btn:active {
+            transform: scale(0.95);
+            background: #e0b010;
+        }
+
+        .send-act-btn.loading {
+            pointer-events: none;
+            background: #4a4a4a;
+            color: #888;
+        }
+
+        .send-act-btn .act-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #0a0a0a;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+
+        .send-act-btn.loading .act-spinner {
+            display: block;
+        }
+
+        .send-act-btn.loading .act-text {
+            display: none;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .route-info {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #2a2a2a;
+        }
+
+        .route-info .route-label {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .route-info .route-value {
+            color: #f5c518;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .route-info .route-sub {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .yandex-map-container {
+            width: 100%;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 8px 0;
+            border: 1px solid #2a2a2a;
+            background: #1a1a1a;
+        }
+
+        .yandex-map-container .ymaps-2-1-79-map {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .map-coords {
+            color: #888;
+            font-size: 12px;
+            text-align: center;
+            padding: 4px 0;
+            border-top: 1px solid #2a2a2a;
+            margin-top: 4px;
+        }
+
+        .map-coords span {
+            color: #f5c518;
+            font-weight: 500;
+        }
+
+        /* Стили для фотоотчёта */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .photo-item {
+            aspect-ratio: 1;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            position: relative;
+            min-height: 80px;
+        }
+
+        .photo-item:active {
+            transform: scale(0.95);
+            border-color: #f5c518;
+        }
+
+        .photo-item .photo-placeholder {
+            font-size: 28px;
+            margin-bottom: 4px;
+            opacity: 0.5;
+        }
+
+        .photo-item .photo-label {
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+            padding: 0 4px;
+        }
+
+        .photo-item .photo-filename {
+            font-size: 9px;
+            color: #444;
+            margin-top: 2px;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .photo-item .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            padding: 4px 6px;
+            font-size: 10px;
+            color: #f0f0f0;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+
+        .photo-item:active .photo-overlay {
+            opacity: 1;
+        }
+
+        /* Полноэкранный просмотр фото */
+        .photo-fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 20px;
+        }
+
+        .photo-fullscreen.active {
+            display: flex;
+        }
+
+        .photo-fullscreen img {
+            max-width: 100%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .photo-fullscreen .close-fullscreen {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            background: none;
+            border: none;
+            z-index: 10000;
+        }
+
+        .photo-fullscreen .close-fullscreen:active {
+            opacity: 1;
+            transform: scale(0.9);
+        }
+
+        .photo-fullscreen .photo-info {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #888;
+            font-size: 14px;
+            background: rgba(0,0,0,0.6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Стиль для ошибки фото */
+        .photo-error {
+            color: #f44336;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .app-card {
+                padding-top: max(20px, env(safe-area-inset-top, 20px)) !important;
+                padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
+                padding-left: max(16px, env(safe-area-inset-left, 16px)) !important;
+                padding-right: max(16px, env(safe-area-inset-right, 16px)) !important;
+                height: 100%;
+                min-height: 100%;
+                border-radius: 0;
+            }
+            
+            .menu-overlay {
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+                padding: 20px;
+            }
+            
+            .menu-popup {
+                max-height: 70vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .doc-menu-overlay {
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+                padding: 20px;
+            }
+
+            .doc-menu-popup {
+                max-height: 70vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .info-popup {
+                max-height: 70vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .toast-notification {
+                top: env(safe-area-inset-top, 0px);
+                padding-top: max(14px, env(safe-area-inset-top, 14px));
+            }
+
+            .photo-fullscreen img {
+                max-height: 85%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-card" role="main">
+
+    <div class="toast-notification" id="toastNotification"><span id="toastMessage">Сообщение</span></div>
+
+    <div class="app-header">
+        <div class="header-top">
+            <div class="header-left">
+                <button class="logout-btn" id="logoutBtn" aria-label="Выход">
+                    <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </button>
+            </div>
+            <div class="portal-title">Портал обращения с отходами</div>
+            <button class="burger-btn" id="burgerBtn" aria-label="Меню">
+                <span class="line"></span><span class="line"></span><span class="line"></span>
+            </button>
+        </div>
+        <div class="location-wrapper">
+            <button class="location-btn" id="locationBtn">
+                <span id="currentLocation">📍 Санкт-Петербург</span><span class="arrow">▼</span>
+            </button>
+        </div>
+        <div class="divider-glow"></div>
+    </div>
+
+    <div class="auth-section" id="authSection">
+        <div class="auth-form" id="authForm">
+            <div class="form-group"><label for="loginInput">Логин</label><input type="text" id="loginInput" placeholder="введите логин" autocomplete="username"></div>
+            <div class="form-group"><label for="passwordInput">Пароль</label><input type="password" id="passwordInput" placeholder="введите пароль" autocomplete="current-password"></div>
+            <div class="auth-error" id="authError">Неверный логин или пароль</div>
+        </div>
+    </div>
+
+    <div class="auth-btn-wrapper" id="authBtnWrapper">
+        <button class="auth-btn" id="authBtn"><span class="btn-text">🔑 Авторизоваться</span></button>
+        <div class="progress-bar-wrapper" id="progressWrapper"><div class="progress-bar-fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="grid-buttons">
+            <button class="btn-grid" data-point="1" data-type="point"><span class="label"><strong>Точка 1</strong><br><span style="font-size:10px;font-weight:400;">Объект образования отходов</span></span></button>
+            <button class="btn-grid" data-point="2" data-type="point"><span class="label"><strong>Точка 2</strong><br><span style="font-size:10px;font-weight:400;">Объект утилизации отходов</span></span></button>
+            <button class="btn-grid" data-point="3" data-type="point"><span class="label"><strong>Точка 3</strong><br><span style="font-size:10px;font-weight:400;">Покупатель</span></span></button>
+            <button class="btn-grid" data-action="Загрузка" data-type="action"><span class="label">Загрузка</span></button>
+            <button class="btn-grid" data-action="Весы" data-type="action"><span class="label">Весы</span></button>
+            <button class="btn-grid" data-action="Маршрут" data-type="action"><span class="label">Маршрут</span></button>
+            <button class="btn-grid" data-action="Лидар" data-type="action"><span class="label">Лидар</span></button>
+            <button class="btn-grid" data-action="Штрафы" data-type="fine"><span class="label"><strong>Штрафы</strong></span></button>
+            <button class="btn-grid" data-action="Фотоотчёт" data-type="photo"><span class="label"><strong>Фотоотчёт</strong></span></button>
+            <button class="btn-grid" data-action="История маршрутов" data-type="history"><span class="label"><strong>История<br>маршрутов</strong></span></button>
+            <!-- Новая кнопка ГИС ЭПД -->
+            <button class="btn-grid" data-action="ГИС ЭПД" data-type="gisedp"><span class="label"><strong>ГИС ЭПД</strong><br><span style="font-size:10px;font-weight:400;">Электронные документы</span></span></button>
+        </div>
+
+        <div class="message-area">
+            <label for="messageInput">📄 Сформировать и отправить документ</label>
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="выберите документ..." maxlength="80" autocomplete="off" readonly>
+                <button class="file-btn" id="fileSelectBtn" aria-label="Выбрать документ"><span>＋</span></button>
+                <button class="send-btn" id="sendMessageBtn" aria-label="Отправить"><span class="send-icon">➤</span></button>
+                <div class="doc-progress-wrapper" id="docProgressWrapper"><div class="doc-progress-fill" id="docProgressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="output-box" id="outputBox">
+            <div class="output-label">Компания</div>
+            <div class="output-message" id="outputMessage">
+                <span class="company-name" id="companyName">ПАО "ВЫМПЕЛКОМ"</span><br>
+                <span class="company-inn" id="companyInn">ИНН 7713076301</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Полноэкранный просмотр фото -->
+<div class="photo-fullscreen" id="photoFullscreen">
+    <button class="close-fullscreen" id="closeFullscreen">✕</button>
+    <img id="fullscreenImage" src="" alt="Фото">
+    <div class="photo-info" id="fullscreenInfo">Фото</div>
+</div>
+
+<div class="menu-overlay" id="menuOverlay">
+    <div class="menu-popup">
+        <div class="menu-title" id="menuTitle">Меню</div>
+        <div id="menuItems"></div>
+        <button class="menu-close" id="menuClose">✕ Закрыть</button>
+    </div>
+</div>
+
+<div class="info-overlay" id="infoOverlay">
+    <div class="info-popup">
+        <div class="info-title" id="infoTitle">Информация</div>
+        <div class="info-content" id="infoContent"></div>
+        <div class="info-actions" id="infoActions"></div>
+    </div>
+</div>
+
+<div class="doc-menu-overlay" id="docMenuOverlay">
+    <div class="doc-menu-popup">
+        <div class="doc-menu-title">📄 Выберите документ</div>
+        <button class="doc-menu-item" data-doc="Товарная накладная">📋 Товарная накладная</button>
+        <button class="doc-menu-item" data-doc="Маршрутный лист">🗺️ Маршрутный лист</button>
+        <button class="doc-menu-item" data-doc="Акт приёма-передачи">📄 Акт приёма-передачи</button>
+        <button class="doc-menu-item" data-doc="Транспортная накладная">🚚 Транспортная накладная</button>
+        <button class="doc-menu-item" data-doc="Сопроводительный лист">📑 Сопроводительный лист</button>
+        <button class="doc-menu-close" id="docMenuClose">✕ Отмена</button>
+    </div>
+</div>
+
+<div class="menu-overlay" id="locationMenuOverlay">
+    <div class="menu-popup">
+        <div class="menu-title">📍 Выберите регион</div>
+        <button class="menu-item" data-location="Санкт-Петербург">Санкт-Петербург</button>
+        <button class="menu-item" data-location="Ленинградская область">Ленинградская область</button>
+        <button class="menu-item" data-location="Чувашская Республика">Чувашская Республика</button>
+        <button class="menu-item" data-location="Республика Карелия">Республика Карелия</button>
+        <button class="menu-close" id="locationMenuClose">✕ Закрыть</button>
+    </div>
+</div>
+
+<div class="menu-overlay" id="profileMenuOverlay">
+    <div class="menu-popup">
+        <div class="menu-title">👤 Выберите профиль</div>
+        <button class="menu-item" data-profile="ЛК отходообразователя">ЛК отходообразователя</button>
+        <button class="menu-item" data-profile="ЛК отходополучателя">ЛК отходополучателя</button>
+        <button class="menu-item" data-profile="ЛК контроль">ЛК контроль</button>
+        <button class="menu-close" id="profileMenuClose">✕ Закрыть</button>
+    </div>
+</div>
+
+<script>
+    (function() {
+        "use strict";
+
+        // --- Элементы ---
+        const authBtn = document.getElementById('authBtn');
+        const loginInput = document.getElementById('loginInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const authError = document.getElementById('authError');
+        const authSection = document.getElementById('authSection');
+        const authBtnWrapper = document.getElementById('authBtnWrapper');
+        const progressWrapper = document.getElementById('progressWrapper');
+        const progressFill = document.getElementById('progressFill');
+        const mainContent = document.getElementById('mainContent');
+        const messageInput = document.getElementById('messageInput');
+        const sendBtn = document.getElementById('sendMessageBtn');
+        const fileSelectBtn = document.getElementById('fileSelectBtn');
+        const docProgressWrapper = document.getElementById('docProgressWrapper');
+        const docProgressFill = document.getElementById('docProgressFill');
+        const gridButtons = document.querySelectorAll('.btn-grid');
+        const toastNotification = document.getElementById('toastNotification');
+        const toastMessage = document.getElementById('toastMessage');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const companyNameEl = document.getElementById('companyName');
+        const companyInnEl = document.getElementById('companyInn');
+        const burgerBtn = document.getElementById('burgerBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuTitle = document.getElementById('menuTitle');
+        const menuItems = document.getElementById('menuItems');
+        const menuClose = document.getElementById('menuClose');
+        const infoOverlay = document.getElementById('infoOverlay');
+        const infoTitle = document.getElementById('infoTitle');
+        const infoContent = document.getElementById('infoContent');
+        const infoActions = document.getElementById('infoActions');
+        const docMenuOverlay = document.getElementById('docMenuOverlay');
+        const docMenuClose = document.getElementById('docMenuClose');
+        const docMenuItems = document.querySelectorAll('.doc-menu-item');
+        const locationBtn = document.getElementById('locationBtn');
+        const currentLocation = document.getElementById('currentLocation');
+        const locationMenuOverlay = document.getElementById('locationMenuOverlay');
+        const locationMenuClose = document.getElementById('locationMenuClose');
+        const locationItems = locationMenuOverlay.querySelectorAll('.menu-item');
+        const profileMenuOverlay = document.getElementById('profileMenuOverlay');
+        const profileMenuClose = document.getElementById('profileMenuClose');
+        const profileItems = profileMenuOverlay.querySelectorAll('.menu-item');
+        
+        // Фотоотчёт
+        const photoFullscreen = document.getElementById('photoFullscreen');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        const fullscreenInfo = document.getElementById('fullscreenInfo');
+        const closeFullscreen = document.getElementById('closeFullscreen');
+
+        let isAuthorized = false;
+        let selectedDocument = '';
+        let toastTimer = null;
+        let currentUser = null;
+        let mapInstance = null;
+
+        // --- Данные для фотоотчёта (путь к фото - папка photo в корне сайта) ---
+        const photoData = {
+            'Рейс 1': {
+                images: [
+                    { id: '11', label: 'Кабина с ГРЗ', file: '11.jpg' },
+                    { id: '12', label: 'Кузов с грузом', file: '12.jpg' },
+                    { id: '13', label: 'Товарная накладная', file: '13.jpg' }
+                ]
+            },
+            'Рейс 2': {
+                images: [
+                    { id: '21', label: 'Кабина с ГРЗ', file: '21.jpg' },
+                    { id: '22', label: 'Кузов с грузом', file: '22.jpg' },
+                    { id: '23', label: 'Товарная накладная', file: '23.jpg' }
+                ]
+            },
+            'Рейс 3': {
+                images: [
+                    { id: '31', label: 'Кабина с ГРЗ', file: '31.jpg' },
+                    { id: '32', label: 'Кузов с грузом', file: '32.jpg' },
+                    { id: '33', label: 'Товарная накладная', file: '33.jpg' }
+                ]
+            },
+            'Рейс 4': {
+                images: [
+                    { id: '41', label: 'Кабина с ГРЗ', file: '41.jpg' },
+                    { id: '42', label: 'Кузов с грузом', file: '42.jpg' },
+                    { id: '43', label: 'Товарная накладная', file: '43.jpg' }
+                ]
+            }
+        };
+
+        const users = {
+            '123': { companyName: 'ПАО "ВЫМПЕЛКОМ"', inn: 'ИНН 7713076301' },
+            '321': { companyName: 'ООО "ЭКОГРАД"', inn: 'ИНН 7811225167' }
+        };
+
+        // Координаты точек
+        const pointCoords = {
+            '1': { lat: 60.028753, lng: 30.238860, name: 'Точка 1 (Объект образования отходов)' },
+            '2': { lat: 59.890130, lng: 30.669999, name: 'Точка 2 (Объект утилизации отходов)' },
+            '3': { lat: 59.906130, lng: 30.679999, name: 'Точка 3 (Покупатель)' }
+        };
+
+        // --- Функция для получения времени -1 час ---
+        function getPastTime(hours = 1) {
+            const now = new Date();
+            now.setHours(now.getHours() - hours);
+            const hoursStr = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            return hoursStr + ':' + minutes;
+        }
+
+        // --- Функция для получения времени -72 минуты ---
+        function getPastMinutes(minutes = 72) {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - minutes);
+            const hours = String(now.getHours()).padStart(2, '0');
+            const mins = String(now.getMinutes()).padStart(2, '0');
+            return hours + ':' + mins;
+        }
+
+        // --- Функция для получения времени +47 минут ---
+        function getFutureTime(offsetMinutes = 47) {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() + offsetMinutes);
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            return hours + ':' + minutes;
+        }
+
+        // --- Функция для получения текущей даты и времени ---
+        function getCurrentDateTime() {
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '.');
+            const timeStr = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+            return { date: dateStr, time: timeStr };
+        }
+
+        // --- Инициализация Яндекс Карты ---
+        function initYandexMap(lat, lng, pointName) {
+            setTimeout(function() {
+                const container = document.getElementById('yandexMapContainer');
+                if (!container) return;
+                
+                if (typeof ymaps === 'undefined') {
+                    container.innerHTML = '<div style="color:#888;text-align:center;padding:40px 20px;">⚠️ API Яндекс Карт не загрузился. Проверьте подключение.</div>';
+                    return;
+                }
+
+                if (mapInstance) {
+                    mapInstance.destroy();
+                    mapInstance = null;
+                }
+
+                ymaps.ready(function() {
+                    mapInstance = new ymaps.Map(container, {
+                        center: [lat, lng],
+                        zoom: 15,
+                        controls: ['zoomControl', 'fullscreenControl']
+                    });
+
+                    var placemark = new ymaps.Placemark([lat, lng], {
+                        balloonContent: '<b>' + pointName + '</b><br>' + lat.toFixed(6) + ', ' + lng.toFixed(6)
+                    }, {
+                        preset: 'islands#redDotIconWithCaption',
+                        draggable: false
+                    });
+                    mapInstance.geoObjects.add(placemark);
+
+                    setTimeout(function() {
+                        if (mapInstance) {
+                            mapInstance.container.fitToViewport();
+                        }
+                    }, 300);
+                });
+            }, 300);
+        }
+
+        // --- Тост ---
+        function showToast(msg) {
+            toastMessage.textContent = msg;
+            toastNotification.classList.add('show');
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => { toastNotification.classList.remove('show'); toastTimer = null; }, 2000);
+        }
+
+        // --- Инфо-карточка ---
+        function showInfo(title, contentHTML, actionConfig) {
+            infoTitle.textContent = title;
+            infoContent.innerHTML = contentHTML;
+            infoActions.innerHTML = '';
+            if (actionConfig) {
+                const btn = document.createElement('button');
+                btn.textContent = actionConfig.label || 'Выполнить';
+                btn.className = actionConfig.className || 'btn-action-success';
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (actionConfig.onAction) actionConfig.onAction();
+                    closeInfo();
+                    if (navigator.vibrate) navigator.vibrate(10);
+                });
+                infoActions.appendChild(btn);
+            }
+            const btnClose = document.createElement('button');
+            btnClose.textContent = 'Закрыть';
+            btnClose.className = 'btn-close';
+            if (!actionConfig) btnClose.style.flex = '1';
+            btnClose.addEventListener('click', (e) => { e.stopPropagation(); closeInfo(); if (navigator.vibrate) navigator.vibrate(5); });
+            infoActions.appendChild(btnClose);
+            infoOverlay.classList.add('active');
+            if (navigator.vibrate) navigator.vibrate(10);
+        }
+        function closeInfo() { 
+            infoOverlay.classList.remove('active');
+            if (mapInstance) {
+                mapInstance.destroy();
+                mapInstance = null;
+            }
+        }
+        infoOverlay.addEventListener('click', (e) => { if (e.target === infoOverlay) closeInfo(); });
+
+        // --- Полноэкранный просмотр фото ---
+        function openFullscreen(imageSrc, label) {
+            fullscreenImage.src = imageSrc;
+            fullscreenInfo.textContent = label;
+            photoFullscreen.classList.add('active');
+            if (navigator.vibrate) navigator.vibrate(10);
+        }
+
+        function closeFullscreenFn() {
+            photoFullscreen.classList.remove('active');
+            fullscreenImage.src = '';
+        }
+
+        closeFullscreen.addEventListener('click', closeFullscreenFn);
+        photoFullscreen.addEventListener('click', function(e) {
+            if (e.target === photoFullscreen) {
+                closeFullscreenFn();
+            }
+        });
+
+        // --- Функция для проверки существования изображения ---
+        function imageExists(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            });
+        }
+
+        // --- Фотоотчёт: при нажатии на кнопку сразу открывается список рейсов ---
+        function openPhotoReportMenu() {
+            const html = `
+                <div style="margin-bottom:12px;color:#888;font-size:13px;">Выберите рейс для просмотра фотографий</div>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+                    ${Object.keys(photoData).map(ride => `
+                        <button class="photo-ride-btn" data-ride="${ride}" style="background:#2a2a2a;border:1px solid #3a3a3a;border-radius:16px;padding:14px 10px;color:#f0f0f0;font-size:16px;font-weight:500;cursor:pointer;text-align:center;touch-action:manipulation;transition:all 0.2s ease;">
+                            📸 ${ride}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+            
+            showInfo('📸 Фотоотчёт', html, null);
+            showToast('📸 Выберите рейс');
+            
+            setTimeout(() => {
+                document.querySelectorAll('.photo-ride-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const ride = this.dataset.ride;
+                        openRidePhotos(ride);
+                    });
+                });
+            }, 50);
+        }
+
+        // --- Открытие фотографий конкретного рейса с проверкой существования ---
+        function openRidePhotos(ride) {
+            const data = photoData[ride];
+            if (!data) return;
+
+            // Проверяем каждое фото и показываем либо изображение, либо заглушку
+            const imagesHtml = data.images.map(img => {
+                const imagePath = 'photo/' + img.file; // путь к папке photo (без "s")
+                return `
+                    <div class="photo-item" data-file="${imagePath}" data-label="${img.label}" data-filename="${img.file}">
+                        <div class="photo-placeholder">🖼️</div>
+                        <div class="photo-label">${img.label}</div>
+                        <div class="photo-filename">${img.file}</div>
+                        <div class="photo-overlay">Нажмите для просмотра</div>
+                    </div>
+                `;
+            }).join('');
+
+            const html = `
+                <div style="margin-bottom:8px;color:#f5c518;font-weight:600;">📸 ${ride}</div>
+                <div class="photo-grid">
+                    ${imagesHtml}
+                </div>
+                <div style="color:#666;font-size:11px;text-align:center;margin-top:8px;">
+                    Файлы: ${data.images.map(i => i.file).join(', ')}
+                </div>
+                <button class="menu-close" style="width:100%;padding:14px;margin-top:12px;background:transparent;border:1px solid #4a4a4a;border-radius:16px;color:#888;font-size:16px;cursor:pointer;touch-action:manipulation;" id="backToPhotoMenu">← Назад к рейсам</button>
+            `;
+
+            showInfo('📸 Фотоотчёт — ' + ride, html, null);
+
+            // После отрисовки проверяем каждое фото и подгружаем его
+            setTimeout(() => {
+                document.querySelectorAll('.photo-item').forEach(item => {
+                    const filePath = item.dataset.file;
+                    const label = item.dataset.label;
+                    const filename = item.dataset.filename;
+                    
+                    // Создаём img и проверяем загрузку
+                    const img = new Image();
+                    img.onload = function() {
+                        // Фото загрузилось — показываем его
+                        const existingImg = item.querySelector('img');
+                        if (existingImg) {
+                            existingImg.src = filePath;
+                        } else {
+                            const imgEl = document.createElement('img');
+                            imgEl.src = filePath;
+                            imgEl.alt = label;
+                            item.insertBefore(imgEl, item.firstChild);
+                        }
+                        // Скрываем плейсхолдер
+                        const placeholder = item.querySelector('.photo-placeholder');
+                        if (placeholder) placeholder.style.display = 'none';
+                        item.style.background = 'transparent';
+                    };
+                    img.onerror = function() {
+                        // Фото не найдено — показываем заглушку
+                        item.style.background = '#2a2a2a';
+                        const placeholder = item.querySelector('.photo-placeholder');
+                        if (placeholder) {
+                            placeholder.textContent = '❌';
+                            placeholder.style.fontSize = '32px';
+                            placeholder.style.opacity = '1';
+                        }
+                        const labelEl = item.querySelector('.photo-label');
+                        if (labelEl) {
+                            labelEl.style.color = '#f44336';
+                        }
+                        const filenameEl = item.querySelector('.photo-filename');
+                        if (filenameEl) {
+                            filenameEl.textContent = 'файл не найден';
+                            filenameEl.style.color = '#f44336';
+                        }
+                        showToast('⚠️ Файл не найден: ' + filename);
+                    };
+                    img.src = filePath;
+                    
+                    // Клик для открытия в полноэкранном режиме
+                    item.addEventListener('click', function(e) {
+                        const file = this.dataset.file;
+                        const label = this.dataset.label;
+                        // Проверяем, есть ли img с src
+                        const imgEl = this.querySelector('img');
+                        if (imgEl && imgEl.src && !imgEl.src.includes('error')) {
+                            openFullscreen(file, label + ' (' + ride + ')');
+                        } else {
+                            showToast('⚠️ Фото не найдено: ' + this.dataset.filename);
+                        }
+                    });
+                });
+                
+                // Кнопка "Назад"
+                const backBtn = document.getElementById('backToPhotoMenu');
+                if (backBtn) {
+                    backBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        closeInfo();
+                        setTimeout(() => openPhotoReportMenu(), 100);
+                    });
+                }
+            }, 100);
+        }
+
+        // --- Выход ---
+        logoutBtn.addEventListener('click', function() {
+            mainContent.classList.add('fade-out');
+            setTimeout(() => {
+                isAuthorized = false;
+                mainContent.classList.remove('active');
+                mainContent.classList.remove('fade-out');
+                authSection.classList.remove('hidden');
+                authBtnWrapper.classList.remove('hidden');
+                authBtn.style.display = 'block';
+                authBtn.style.pointerEvents = 'auto';
+                authBtn.style.background = '#f5c518';
+                authBtn.style.color = '#0a0a0a';
+                authBtn.querySelector('.btn-text').textContent = '🔑 Авторизоваться';
+                loginInput.value = '';
+                passwordInput.value = '';
+                loginInput.disabled = false;
+                passwordInput.disabled = false;
+                document.querySelector('.auth-form').style.opacity = '1';
+                progressFill.classList.remove('animating');
+                progressFill.style.width = '0%';
+                progressWrapper.classList.remove('active');
+                companyNameEl.textContent = 'ПАО "ВЫМПЕЛКОМ"';
+                companyInnEl.textContent = 'ИНН 7713076301';
+                showToast('👋 Вы вышли из аккаунта');
+                if (navigator.vibrate) navigator.vibrate(20);
+            }, 600);
+        });
+
+        // --- Авторизация ---
+        authBtn.addEventListener('click', function() {
+            const login = loginInput.value.trim();
+            const password = passwordInput.value.trim();
+            if (users[password] && login === password) {
+                authError.classList.remove('active');
+                progressWrapper.classList.add('active');
+                progressFill.classList.add('animating');
+                authBtn.querySelector('.btn-text').textContent = '⏳ Вход...';
+                authBtn.style.background = '#4a4a4a';
+                authBtn.style.color = '#888';
+                authBtn.style.pointerEvents = 'none';
+                currentUser = users[password];
+                setTimeout(() => {
+                    isAuthorized = true;
+                    companyNameEl.textContent = currentUser.companyName;
+                    companyInnEl.textContent = currentUser.inn;
+                    authSection.classList.add('hidden');
+                    authBtnWrapper.classList.add('hidden');
+                    mainContent.classList.add('active');
+                    showToast('✅ Авторизация выполнена');
+                    if (navigator.vibrate) navigator.vibrate(20);
+                    setTimeout(() => {
+                        progressFill.classList.remove('animating');
+                        progressFill.style.width = '0%';
+                        progressWrapper.classList.remove('active');
+                        authBtn.querySelector('.btn-text').textContent = '🔑 Авторизоваться';
+                        authBtn.style.background = '#f5c518';
+                        authBtn.style.color = '#0a0a0a';
+                        authBtn.style.pointerEvents = 'auto';
+                    }, 500);
+                }, 2500);
+            } else {
+                authError.classList.add('active');
+                if (navigator.vibrate) navigator.vibrate(30);
+                setTimeout(() => { authError.classList.remove('active'); }, 3000);
+            }
+        });
+        loginInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); passwordInput.focus(); } });
+        passwordInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); authBtn.click(); } });
+
+        // --- Отправка документа ---
+        async function sendDocument() {
+            if (!isAuthorized) { showToast('⚠️ Авторизуйтесь сначала'); return; }
+            const docName = messageInput.value.trim();
+            if (!docName) { showToast('⚠️ Выберите документ'); return; }
+            docProgressWrapper.classList.add('active');
+            docProgressFill.classList.add('doc-animating');
+            sendBtn.classList.add('loading');
+            await new Promise(resolve => setTimeout(() => {
+                sendBtn.classList.remove('loading');
+                showToast('✅ Документ "' + docName + '" отправлен');
+                messageInput.value = '';
+                selectedDocument = '';
+                if (navigator.vibrate) navigator.vibrate(6);
+                resolve();
+            }, 3000));
+            setTimeout(() => {
+                docProgressFill.classList.remove('doc-animating');
+                docProgressFill.style.width = '0%';
+                docProgressWrapper.classList.remove('active');
+            }, 300);
+        }
+        sendBtn.addEventListener('click', (e) => { e.preventDefault(); sendDocument(); });
+        messageInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); sendDocument(); } });
+
+        // --- Документы ---
+        function openDocMenu() {
+            if (!isAuthorized) { showToast('⚠️ Авторизуйтесь сначала'); return; }
+            docMenuOverlay.classList.add('active');
+        }
+        function closeDocMenu() { docMenuOverlay.classList.remove('active'); }
+        docMenuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                messageInput.value = this.dataset.doc;
+                selectedDocument = this.dataset.doc;
+                closeDocMenu();
+                if (navigator.vibrate) navigator.vibrate(8);
+            });
+        });
+        docMenuClose.addEventListener('click', closeDocMenu);
+        docMenuOverlay.addEventListener('click', (e) => { if (e.target === docMenuOverlay) closeDocMenu(); });
+        fileSelectBtn.addEventListener('click', (e) => { e.preventDefault(); openDocMenu(); if (navigator.vibrate) navigator.vibrate(10); });
+
+        // --- Локация ---
+        function openLocationMenu() { locationMenuOverlay.classList.add('active'); }
+        function closeLocationMenu() { locationMenuOverlay.classList.remove('active'); }
+        locationBtn.addEventListener('click', (e) => { e.preventDefault(); openLocationMenu(); if (navigator.vibrate) navigator.vibrate(10); });
+        locationItems.forEach(item => {
+            item.addEventListener('click', function() {
+                currentLocation.textContent = '📍 ' + this.dataset.location;
+                closeLocationMenu();
+                showToast('📍 Регион изменён: ' + this.dataset.location);
+                if (navigator.vibrate) navigator.vibrate(8);
+            });
+        });
+        locationMenuClose.addEventListener('click', closeLocationMenu);
+        locationMenuOverlay.addEventListener('click', (e) => { if (e.target === locationMenuOverlay) closeLocationMenu(); });
+
+        // --- Профиль ---
+        function openProfileMenu() { profileMenuOverlay.classList.add('active'); }
+        function closeProfileMenu() { profileMenuOverlay.classList.remove('active'); }
+        burgerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const existing = profileMenuOverlay.querySelector('.menu-item[data-action="chat"]');
+            if (!existing) {
+                const chatItem = document.createElement('button');
+                chatItem.className = 'menu-item';
+                chatItem.textContent = '✉ Сообщения';
+                chatItem.dataset.action = 'chat';
+                chatItem.addEventListener('click', function() {
+                    closeProfileMenu();
+                    showToast('⏳ Чат в разработке');
+                });
+                const closeBtn = profileMenuOverlay.querySelector('.menu-close');
+                profileMenuOverlay.querySelector('.menu-popup').insertBefore(chatItem, closeBtn);
+            }
+            profileMenuOverlay.classList.add('active');
+            if (navigator.vibrate) navigator.vibrate(10);
+        });
+        profileItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const profile = this.dataset.profile;
+                closeProfileMenu();
+                showToast('👤 Профиль изменён: ' + profile);
+                if (navigator.vibrate) navigator.vibrate(8);
+            });
+        });
+        profileMenuClose.addEventListener('click', closeProfileMenu);
+        profileMenuOverlay.addEventListener('click', (e) => { if (e.target === profileMenuOverlay) closeProfileMenu(); });
+
+        // --- Меню для кнопок ---
+        function openMenu(title, items, isSubmenu) {
+            if (!isAuthorized) { showToast('⚠️ Авторизуйтесь сначала'); return; }
+            menuTitle.textContent = title;
+            menuItems.innerHTML = '';
+            items.forEach(item => {
+                const btn = document.createElement('button');
+                btn.className = 'menu-item' + (item.isSubmenu ? ' submenu-item' : '');
+                btn.textContent = item.label || item;
+                if (item.isSubmenu) {
+                    btn.style.paddingLeft = '30px';
+                    btn.style.fontSize = '14px';
+                    btn.style.background = '#222';
+                }
+                btn.dataset.action = item.action || item;
+                btn.dataset.submenu = item.submenu ? 'true' : 'false';
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const action = this.dataset.action;
+                    const isSubmenu = this.dataset.submenu === 'true';
+                    if (isSubmenu) {
+                        const subItems = this.dataset.subItems ? JSON.parse(this.dataset.subItems) : [];
+                        if (subItems.length) {
+                            openMenu(action, subItems, true);
+                        } else {
+                            showToast('📋 ' + action);
+                        }
+                    } else {
+                        handleMenuItemClick(title, action);
+                        closeMenu();
+                    }
+                    if (navigator.vibrate) navigator.vibrate(8);
+                });
+                if (item.subItems) {
+                    btn.dataset.subItems = JSON.stringify(item.subItems);
+                    btn.dataset.submenu = 'true';
+                }
+                menuItems.appendChild(btn);
+            });
+            menuOverlay.classList.add('active');
+        }
+        function closeMenu() { menuOverlay.classList.remove('active'); }
+        menuClose.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', (e) => { if (e.target === menuOverlay) closeMenu(); });
+
+        // --- Обработчик выбора пункта меню ---
+        function handleMenuItemClick(buttonTitle, action) {
+            const now = new Date();
+            const todayStr = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '.');
+            const timeStr = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+            const pastTime = getPastTime(1);
+            const past72Min = getPastMinutes(72);
+            const futureTime = getFutureTime(47);
+
+            // --- Обработка Фотоотчёта ---
+            if (action === 'Фотоотчёт' || buttonTitle === 'Фотоотчёт') {
+                openPhotoReportMenu();
+                return;
+            }
+
+            // --- Обработка ГИС ЭПД ---
+            if (buttonTitle === 'ГИС ЭПД' || action === 'Отправить' || action === 'История') {
+                if (action === 'Отправить') {
+                    const infoHTML = `
+                        <div class="data-row"><span>Операция</span><span class="highlight">Отправка в ГИС ЭПД</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● готово к отправке</span></div>
+                        <div class="data-row"><span>Документов в очереди</span><span class="highlight">3</span></div>
+                        <div class="data-row"><span>Последняя отправка</span><span>${todayStr} ${pastTime}</span></div>
+                        <div class="data-row"><span>Следующая отправка</span><span>${todayStr} ${futureTime}</span></div>
+                        <div class="data-row"><span>Система</span><span>ГИС ЭПД версия 2.1</span></div>
+                    `;
+                    showInfo('📤 Отправить в ГИС ЭПД', infoHTML, {
+                        label: '📤 Отправить сейчас',
+                        className: 'btn-action-success',
+                        onAction: function() {
+                            showToast('✅ Отправка в ГИС ЭПД выполнена');
+                        }
+                    });
+                    showToast('📤 Отправка в ГИС ЭПД');
+                    return;
+                }
+                if (action === 'История') {
+                    const historyHTML = `
+                        <div class="data-row"><span>Операция</span><span class="highlight">История отправок в ГИС ЭПД</span></div>
+                        <div class="data-row"><span>Всего отправок</span><span class="highlight">47</span></div>
+                        <div class="data-row"><span>Успешных</span><span style="color: #4CAF50;">45</span></div>
+                        <div class="data-row"><span>С ошибками</span><span style="color: #f44336;">2</span></div>
+                        <div class="data-row"><span>Последняя отправка</span><span>${todayStr} ${pastTime}</span></div>
+                        <div class="data-row"><span>Последняя ошибка</span><span>20.08.2026 — тайм-аут</span></div>
+                        <div class="data-row"><span>Среднее время отправки</span><span>1.2 сек</span></div>
+                    `;
+                    showInfo('📋 История ГИС ЭПД', historyHTML);
+                    showToast('📋 История отправок');
+                    return;
+                }
+                // Если нажата сама кнопка ГИС ЭПД — открываем подменю
+                if (action === 'ГИС ЭПД') {
+                    openMenu('ГИС ЭПД', ['Отправить', 'История']);
+                    return;
+                }
+            }
+
+            // Определяем номер точки из заголовка
+            let pointNum = '1';
+            if (buttonTitle.includes('Точка 2')) pointNum = '2';
+            else if (buttonTitle.includes('Точка 3')) pointNum = '3';
+            else if (buttonTitle.includes('Точка 1')) pointNum = '1';
+
+            const actionData = {
+                // Точка 1
+                'Точка 1: Показать отходы на точке': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Общий объём отходов</span><span class="highlight">220 т</span></div>
+                        <div class="data-row"><span>Класс опасности</span><span class="highlight">IV</span></div>
+                        <div class="data-row"><span>Состав</span><span>грунт</span></div>
+                        <div class="data-row"><span>Дата последней доставки</span><span>${todayStr} ${pastTime}</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● накопление</span></div>`
+                },
+                'Точка 1: История отходов': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Всего заявок</span><span class="highlight">120</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">220 т</span></div>
+                        <div class="data-row"><span>Текущий утилизированный объём</span><span>180 т</span></div>
+                        <div class="data-row"><span>Среднесуточный объём</span><span>20 т</span></div>
+                        <div class="data-row"><span>Последний рейс</span><span>${todayStr} 13:47</span></div>
+                        <div class="data-row"><span>Динамика</span><span style="color: #4CAF50;">▲ +12%</span></div>`
+                },
+                'Точка 1: Отправить на переработку': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Заявка</span><span class="highlight">№П-${todayStr.replace(/\./g, '')}</span></div>
+                        <div class="data-row"><span>Объём</span><span class="highlight">20 т</span></div>
+                        <div class="data-row"><span>Переработчик</span><span>ООО "ЭКОГРАД"</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #FFA726;">● в обработке</span></div>
+                        <div class="data-row"><span>Планируемая дата</span><span>${todayStr}</span></div>`
+                },
+                'Точка 1: План вывоза': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Рейсов в неделю</span><span class="highlight">32</span></div>
+                        <div class="data-row"><span>Ближайший вывоз</span><span>${todayStr} ${futureTime}</span></div>
+                        <div class="data-row"><span>Транспорт</span><span>МАЗ-5516, г/н А123ВС</span></div>
+                        <div class="data-row"><span>Объём за рейс</span><span>20 м³</span></div>
+                        <div class="data-row"><span>Маршрут</span><span>Точка 1 → Точка 2 → Точка 3</span></div>`
+                },
+                // Точка 2
+                'Точка 2: Показать отходы на точке': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Общий объём отходов</span><span class="highlight">180 т</span></div>
+                        <div class="data-row"><span>Класс опасности</span><span class="highlight">IV</span></div>
+                        <div class="data-row"><span>Состав</span><span>строительный мусор</span></div>
+                        <div class="data-row"><span>Дата последней поставки</span><span>${todayStr} ${timeStr}</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● утилизация</span></div>`
+                },
+                'Точка 2: История отходов': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Всего заявок</span><span class="highlight">95</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">180 т</span></div>
+                        <div class="data-row"><span>Переработано</span><span>165 т</span></div>
+                        <div class="data-row"><span>Среднесуточный объём</span><span>15 т</span></div>
+                        <div class="data-row"><span>Последний рейс</span><span>${todayStr} 13:47</span></div>
+                        <div class="data-row"><span>Динамика</span><span style="color: #4CAF50;">▲ +8%</span></div>`
+                },
+                'Точка 2: Отправить на переработку': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Заявка</span><span class="highlight">№У-${todayStr.replace(/\./g, '')}</span></div>
+                        <div class="data-row"><span>Объём</span><span class="highlight">25 т</span></div>
+                        <div class="data-row"><span>Переработчик</span><span>ООО "ЭКОГРАД"</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #FFA726;">● в обработке</span></div>
+                        <div class="data-row"><span>Планируемая дата</span><span>${todayStr}</span></div>`
+                },
+                'Точка 2: План вывоза': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Рейсов в неделю</span><span class="highlight">25</span></div>
+                        <div class="data-row"><span>Ближайший вывоз</span><span>${todayStr} ${futureTime}</span></div>
+                        <div class="data-row"><span>Транспорт</span><span>КАМАЗ-6520, г/н В456МР</span></div>
+                        <div class="data-row"><span>Объём за рейс</span><span>25 м³</span></div>
+                        <div class="data-row"><span>Маршрут</span><span>Точка 2 → Полигон №2</span></div>`
+                },
+                'Точка 2: Акт(ы) об утилизации': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="file-upload-area" id="uploadArea">
+                            <span class="upload-icon">📁</span>
+                            <div class="upload-text">Нажмите для загрузки документов</div>
+                            <input type="file" id="fileInput" multiple style="display:none" accept=".pdf,.doc,.docx,.jpg,.png">
+                        </div>
+                        <div id="uploadedFiles" style="margin-top:12px;"></div>
+                        <button class="send-act-btn" id="sendActBtn">
+                            <span class="act-text">📤 Отправить акты</span>
+                            <span class="act-spinner"></span>
+                        </button>`
+                },
+                // Точка 3
+                'Точка 3: Показать отходы на точке': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Общий объём отходов</span><span class="highlight">163 т</span></div>
+                        <div class="data-row"><span>Класс опасности</span><span class="highlight">IV</span></div>
+                        <div class="data-row"><span>Состав</span><span>вторичное сырьё</span></div>
+                        <div class="data-row"><span>Дата последней поставки</span><span>${todayStr} ${timeStr}</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● отгружено</span></div>`
+                },
+                'Точка 3: История отходов': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Всего заявок</span><span class="highlight">72</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">163 т</span></div>
+                        <div class="data-row"><span>Отгружено</span><span>150 т</span></div>
+                        <div class="data-row"><span>Среднесуточный объём</span><span>12 т</span></div>
+                        <div class="data-row"><span>Последняя отгрузка</span><span>${todayStr} 13:47</span></div>
+                        <div class="data-row"><span>Динамика</span><span style="color: #4CAF50;">▲ +5%</span></div>`
+                },
+                'Точка 3: Отправить на переработку': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Заявка</span><span class="highlight">№О-${todayStr.replace(/\./g, '')}</span></div>
+                        <div class="data-row"><span>Объём</span><span class="highlight">18 т</span></div>
+                        <div class="data-row"><span>Переработчик</span><span>ООО "ЭКОГРАД"</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #FFA726;">● в обработке</span></div>
+                        <div class="data-row"><span>Планируемая дата</span><span>${todayStr}</span></div>`
+                },
+                'Точка 3: План вывоза': {
+                    info: (btn) => `<div class="data-row"><span>Точка</span><span class="highlight">${btn}</span></div>
+                        <div class="data-row"><span>Рейсов в неделю</span><span class="highlight">20</span></div>
+                        <div class="data-row"><span>Ближайший вывоз</span><span>${todayStr} ${futureTime}</span></div>
+                        <div class="data-row"><span>Транспорт</span><span>MAN TGS, г/н С789ТХ</span></div>
+                        <div class="data-row"><span>Объём за рейс</span><span>18 м³</span></div>
+                        <div class="data-row"><span>Маршрут</span><span>Точка 3 → Покупатель</span></div>`
+                },
+                // Загрузка
+                'Начать загрузку': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Загрузка</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● выполняется</span></div>
+                        <div class="data-row"><span>Текущий объём</span><span class="highlight">17.6 т</span></div>
+                        <div class="data-row"><span>Плановый объём</span><span>17.6 т</span></div>
+                        <div class="data-row"><span>Прогресс</span><span>100%</span></div>
+                        <div class="data-row"><span>Время начала</span><span>${timeStr}</span></div>`
+                },
+                'Журнал загрузок': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Журнал загрузок</span></div>
+                        <div class="data-row"><span>Всего загрузок</span><span class="highlight">120</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">${(17.6 * 120).toFixed(1)} т</span></div>
+                        <div class="data-row"><span>Средняя загрузка</span><span class="highlight">17.6 т</span></div>
+                        <div class="data-row"><span>Максимальная</span><span>22.1 т (02.08.2026)</span></div>
+                        <div class="data-row"><span>Минимальная</span><span>5.2 т (15.08.2026)</span></div>`
+                },
+                'Контроль веса': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Контроль веса</span></div>
+                        <div class="data-row"><span>Текущий вес</span><span class="highlight">17.6 т</span></div>
+                        <div class="data-row"><span>Допустимая норма</span><span>20.0 т</span></div>
+                        <div class="data-row"><span>Загрузка</span><span style="color: #4CAF50;">88% от нормы</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● в пределах нормы</span></div>`
+                },
+                'Отчёт по загрузке': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Отчёт по загрузке</span></div>
+                        <div class="data-row"><span>Период</span><span class="highlight">01.08-27.08.2026</span></div>
+                        <div class="data-row"><span>Всего загрузок</span><span>120</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">${(17.6 * 120).toFixed(1)} т</span></div>
+                        <div class="data-row"><span>Средняя загрузка</span><span>17.6 т</span></div>
+                        <div class="data-row"><span>Эффективность</span><span style="color: #4CAF50;">98%</span></div>`
+                },
+                // Весы
+                'Текущий вес': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Текущий вес</span></div>
+                        <div class="data-row"><span>Вес</span><span class="highlight">17.6 т</span></div>
+                        <div class="data-row"><span>Тара</span><span>1.8 т</span></div>
+                        <div class="data-row"><span>Нетто</span><span>15.8 т</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● стабильно</span></div>`
+                },
+                'История взвешиваний': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">История взвешиваний</span></div>
+                        <div class="data-row"><span>Всего записей</span><span class="highlight">7</span></div>
+                        <div class="data-row"><span>Средний вес</span><span class="highlight">17.6 т</span></div>
+                        <div class="data-row"><span>Максимальный вес</span><span>19.4 т (${todayStr})</span></div>
+                        <div class="data-row"><span>Минимальный вес</span><span>15.2 т (${todayStr})</span></div>`
+                },
+                'Отчёт по весам': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Отчёт по весам</span></div>
+                        <div class="data-row"><span>Период</span><span class="highlight">12.08-25.08.2026</span></div>
+                        <div class="data-row"><span>Средний вес</span><span>17.6 т</span></div>
+                        <div class="data-row"><span>Общий вес</span><span class="highlight">123.2 т</span></div>
+                        <div class="data-row"><span>Кол-во взвешиваний</span><span>7</span></div>`
+                },
+                'Калибровка весов': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Калибровка весов</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● выполнена</span></div>
+                        <div class="data-row"><span>Погрешность</span><span class="highlight">±0.02%</span></div>
+                        <div class="data-row"><span>Дата калибровки</span><span>${todayStr}</span></div>
+                        <div class="data-row"><span>Следующая калибровка</span><span>25.09.2026</span></div>`
+                },
+                // Маршрут
+                'Построить маршрут': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Построить маршрут</span></div>
+                        <div class="route-info">
+                            <div class="route-label">🚛 Маршрут перевозки</div>
+                            <div class="route-value">Точка 1 → Точка 2 → Точка 3</div>
+                            <div style="margin-top:8px;">
+                                <div style="display:flex;justify-content:space-between;padding:4px 0;">
+                                    <span style="color:#888;">Платная дорога</span>
+                                    <span style="color:#f5c518;font-weight:600;">35 км / 47 мин</span>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #2a2a2a;">
+                                    <span style="color:#888;">Бесплатная дорога</span>
+                                    <span style="color:#f5c518;font-weight:600;">33 км / 1 ч 5 мин</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-row"><span>Объём перевозки</span><span>20 м³</span></div>
+                        <div class="data-row"><span>Топливо (платная дорога)</span><span>25.7 л</span></div>
+                        <div class="data-row"><span>Топливо (бесплатная дорога)</span><span>${(25.7 + 4.1).toFixed(1)} л</span></div>`
+                },
+                'Оптимизировать': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Оптимизация маршрута</span></div>
+                        <div class="route-info">
+                            <div class="route-label">🔄 Рекомендуемый маршрут</div>
+                            <div class="route-value" style="color:#4CAF50;">Платная дорога (35 км, 47 мин)</div>
+                            <div style="margin-top:6px;color:#aaa;font-size:13px;">
+                                Экономия топлива: <span style="color:#f5c518;">4.1 л</span> за рейс<br>
+                                Экономия за 120 рейсов: <span style="color:#f5c518;">${(4.1 * 120).toFixed(1)} л</span>
+                            </div>
+                        </div>
+                        <div class="data-row"><span>Платная дорога</span><span style="color:#4CAF50;">35 км, 47 мин (рекомендуется)</span></div>
+                        <div class="data-row"><span>Бесплатная дорога</span><span>33 км, 1 ч 5 мин</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● оптимизация завершена</span></div>`
+                },
+                // Лидар
+                'Сканировать зону': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Сканирование зоны</span></div>
+                        <div class="data-row"><span>Объём отходов</span><span class="highlight">20 м³</span></div>
+                        <div class="data-row"><span>Плотность</span><span>1.3 т/м³</span></div>
+                        <div class="data-row"><span>Примерный вес</span><span>26 т</span></div>
+                        <div class="data-row"><span>Точность сканирования</span><span style="color: #4CAF50;">высокая</span></div>
+                        <div class="data-row"><span>Время последнего сканирования</span><span>${todayStr} ${past72Min}</span></div>`
+                },
+                'История сканирований': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">История сканирований</span></div>
+                        <div class="data-row"><span>Всего сканирований</span><span class="highlight">5</span></div>
+                        <div class="data-row"><span>Средний объём</span><span class="highlight">20 м³</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">100 м³</span></div>
+                        <div class="data-row"><span>Максимальный объём</span><span>120 м³ (10.08.2026)</span></div>
+                        <div class="data-row"><span>Минимальный объём</span><span>80 м³ (20.08.2026)</span></div>
+                        <div class="data-row"><span>Тенденция</span><span style="color: #FFA726;">→ стабильно</span></div>`
+                },
+                'Отчёт по объёму': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Отчёт по объёму</span></div>
+                        <div class="data-row"><span>Период</span><span class="highlight">${todayStr}</span></div>
+                        <div class="data-row"><span>Общий объём</span><span class="highlight">100 м³</span></div>
+                        <div class="data-row"><span>Средний объём</span><span>—</span></div>
+                        <div class="data-row"><span>Кол-во сканирований</span><span>5</span></div>
+                        <div class="data-row"><span>Динамика</span><span style="color: #4CAF50;">▲ +5%</span></div>`
+                },
+                // Штрафы
+                'Список нарушений': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Список нарушений</span></div>
+                        <div class="data-row"><span>Всего нарушений</span><span class="highlight">11</span></div>
+                        <div class="data-row"><span>Непогашенных</span><span style="color: #f44336;">2</span></div>
+                        <div class="data-row"><span>На сумму</span><span class="highlight">165 000 ₽</span></div>
+                        <div class="data-row"><span>Последнее нарушение</span><span>20.08.2026 — превышение нормы</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #FFA726;">● требуется оплата</span></div>`
+                },
+                'Оплатить штраф': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Оплатить штраф</span></div>
+                        <div class="data-row"><span>Сумма</span><span class="highlight">15 000 ₽</span></div>
+                        <div class="data-row"><span>Квитанция</span><span class="highlight">№Ш-${todayStr.replace(/\./g, '')}</span></div>
+                        <div class="data-row"><span>Дата оплаты</span><span>${todayStr}</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● оплачен</span></div>
+                        <div class="data-row"><span>Остаток задолженности</span><span>30 000 ₽</span></div>`
+                },
+                'Акт проверки': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Акт проверки</span></div>
+                        <div class="data-row"><span>Номер акта</span><span class="highlight">№А-${todayStr.replace(/\./g, '')}</span></div>
+                        <div class="data-row"><span>Дата проверки</span><span>${todayStr}</span></div>
+                        <div class="data-row"><span>Результат</span><span style="color: #4CAF50;">нарушений не выявлено</span></div>
+                        <div class="data-row"><span>Проверяющий</span><span>Инспектор Петров С.В.</span></div>
+                        <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● акт подписан</span></div>`
+                },
+                'Статистика нарушений': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Статистика нарушений</span></div>
+                        <div class="data-row"><span>Период</span><span class="highlight">2026 год</span></div>
+                        <div class="data-row"><span>Всего нарушений</span><span class="highlight">11</span></div>
+                        <div class="data-row"><span>На сумму</span><span class="highlight">165 000 ₽</span></div>
+                        <div class="data-row"><span>Оплачено</span><span>135 000 ₽</span></div>
+                        <div class="data-row"><span>Остаток</span><span style="color: #f44336;">30 000 ₽</span></div>
+                        <div class="data-row"><span>Статистика по ГРЗ</span><span style="color: #f5c518;">→ доступна</span></div>`
+                },
+                'Статистика по ГРЗ': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Статистика по ГРЗ</span></div>
+                        <div class="data-row"><span>А123ВС 78</span><span>3 нарушения, 45 000 ₽</span></div>
+                        <div class="data-row"><span>В456МР 78</span><span>1 нарушение, 15 000 ₽</span></div>
+                        <div class="data-row"><span>С789ТХ 78</span><span>2 нарушения, 30 000 ₽</span></div>
+                        <div class="data-row"><span>Е012ОК 78</span><span>0 нарушений, 0 ₽</span></div>
+                        <div class="data-row"><span>К345АА 78</span><span>5 нарушений, 75 000 ₽</span></div>
+                        <div class="data-row"><span>Итого</span><span style="color: #f5c518;">11 нарушений, 165 000 ₽</span></div>`
+                },
+                // История маршрутов
+                'Все маршруты': {
+                    info: (btn) => {
+                        const times = ['11:12', '11:48', '12:22', '12:58', '13:47'];
+                        let html = `<div class="data-row"><span>Операция</span><span class="highlight">Последние 5 маршрутов</span></div>`;
+                        times.forEach((t, i) => {
+                            html += `<div class="data-row"><span>Рейс ${i+1}</span><span>${todayStr} ${t}</span></div>`;
+                        });
+                        html += `<div class="data-row"><span>Всего рейсов</span><span class="highlight">120</span></div>
+                                <div class="data-row"><span>Выполнено</span><span style="color: #4CAF50;">118</span></div>
+                                <div class="data-row"><span>Следующий вывоз</span><span>${todayStr} ${futureTime}</span></div>`;
+                        return html;
+                    }
+                },
+                'Отчёт по маршрутам': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">Отчёт по маршрутам</span></div>
+                        <div class="data-row"><span>Период</span><span class="highlight">${todayStr}</span></div>
+                        <div class="data-row"><span>Всего маршрутов</span><span class="highlight">120</span></div>
+                        <div class="data-row"><span>Общая протяжённость</span><span class="highlight">3 960 км</span></div>
+                        <div class="data-row"><span>Средняя длина</span><span>33 км</span></div>
+                        <div class="data-row"><span>Эффективность</span><span style="color: #4CAF50;">98%</span></div>`
+                },
+                'График вывоза': {
+                    info: (btn) => `<div class="data-row"><span>Операция</span><span class="highlight">График вывоза</span></div>
+                        <div class="data-row"><span>Период</span><span class="highlight">Август 2026</span></div>
+                        <div class="data-row"><span>Всего рейсов</span><span class="highlight">120</span></div>
+                        <div class="data-row"><span>Выполнено</span><span style="color: #4CAF50;">118</span></div>
+                        <div class="data-row"><span>Запланировано</span><span>2</span></div>
+                        <div class="data-row"><span>Следующий вывоз</span><span>${todayStr} ${futureTime}</span></div>`
+                }
+            };
+
+            // Формируем уникальный ключ для каждой точки
+            let uniqueKey = action;
+            if (buttonTitle.includes('Точка 1')) {
+                uniqueKey = 'Точка 1: ' + action;
+            } else if (buttonTitle.includes('Точка 2')) {
+                uniqueKey = 'Точка 2: ' + action;
+            } else if (buttonTitle.includes('Точка 3')) {
+                uniqueKey = 'Точка 3: ' + action;
+            }
+
+            // Обработка "Объект на карте"
+            if (action === 'Объект на карте') {
+                let pointNum = '1';
+                if (buttonTitle.includes('Точка 2')) pointNum = '2';
+                else if (buttonTitle.includes('Точка 3')) pointNum = '3';
+                else if (buttonTitle.includes('Точка 1')) pointNum = '1';
+                const coords = pointCoords[pointNum];
+                
+                const infoHTML = `<div class="data-row"><span>Точка</span><span class="highlight">${buttonTitle}</span></div>
+                    <div class="yandex-map-container" id="yandexMapContainer"></div>
+                    <div class="map-coords">📍 <span>${coords.lat.toFixed(6)}</span>, <span>${coords.lng.toFixed(6)}</span></div>
+                    <div style="text-align:center;color:#666;font-size:12px;margin-top:4px;">Координаты: ${coords.lat.toFixed(6)}, ${coords.lng.toFixed(6)}</div>`;
+                
+                showInfo(buttonTitle, infoHTML, null);
+                showToast('🗺️ ' + buttonTitle + ' → Объект на карте');
+                
+                setTimeout(function() {
+                    initYandexMap(coords.lat, coords.lng, pointCoords[pointNum].name);
+                }, 400);
+                return;
+            }
+
+            const data = actionData[uniqueKey];
+            let infoHTML = '';
+            let title = buttonTitle;
+
+            if (data) {
+                infoHTML = data.info(buttonTitle);
+            } else {
+                infoHTML = `<div class="data-row"><span>Операция</span><span class="highlight">${buttonTitle}</span></div>
+                    <div class="data-row"><span>Действие</span><span>${action}</span></div>
+                    <div class="data-row"><span>Статус</span><span style="color: #4CAF50;">● выполнено</span></div>
+                    <div class="data-row"><span>Время</span><span>${new Date().toLocaleTimeString('ru-RU')}</span></div>`;
+            }
+
+            const actionTypes = ['Начать загрузку', 'Отправить на переработку', 'Оплатить штраф', 'Построить маршрут', 'Оптимизировать', 'Сканировать зону', 'Калибровка весов', 'Выполнить'];
+            let actionConfig = null;
+            if (actionTypes.includes(action)) {
+                actionConfig = {
+                    label: '✅ Выполнить',
+                    className: 'btn-action-success',
+                    onAction: function() {
+                        showToast('✅ ' + action + ' выполнено повторно');
+                        if (navigator.vibrate) navigator.vibrate(15);
+                    }
+                };
+            }
+
+            showToast('📋 ' + buttonTitle + ' → ' + action);
+            showInfo(title, infoHTML, actionConfig);
+
+            // Обработка загрузки файлов для "Акт(ы) об утилизации"
+            if (action === 'Акт(ы) об утилизации') {
+                setTimeout(() => {
+                    const uploadArea = document.getElementById('uploadArea');
+                    const fileInput = document.getElementById('fileInput');
+                    const uploadedFiles = document.getElementById('uploadedFiles');
+                    const sendActBtn = document.getElementById('sendActBtn');
+                    
+                    if (uploadArea && fileInput) {
+                        uploadArea.addEventListener('click', () => fileInput.click());
+                        fileInput.addEventListener('change', function(e) {
+                            const files = e.target.files;
+                            let html = '<div style="color:#4CAF50;font-size:13px;">📎 Загружено файлов: ' + files.length + '</div>';
+                            for (let i = 0; i < files.length; i++) {
+                                html += `<div style="color:#aaa;font-size:12px;padding:2px 0;">• ${files[i].name} (${(files[i].size/1024).toFixed(0)} КБ)</div>`;
+                            }
+                            uploadedFiles.innerHTML = html;
+                            showToast('✅ Загружено ' + files.length + ' файлов');
+                        });
+                    }
+                    
+                    if (sendActBtn) {
+                        sendActBtn.addEventListener('click', function() {
+                            const files = fileInput.files;
+                            if (files.length === 0) {
+                                showToast('⚠️ Сначала загрузите документы');
+                                return;
+                            }
+                            sendActBtn.classList.add('loading');
+                            setTimeout(() => {
+                                sendActBtn.classList.remove('loading');
+                                showToast('✅ Акты об утилизации отправлены (' + files.length + ' файлов)');
+                                if (navigator.vibrate) navigator.vibrate(15);
+                            }, 2500);
+                        });
+                    }
+                }, 100);
+            }
+        }
+
+        // --- Обработчики для кнопок сетки ---
+        gridButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (!isAuthorized) { showToast('⚠️ Авторизуйтесь сначала'); return; }
+                const point = this.dataset.point;
+                const action = this.dataset.action;
+                const type = this.dataset.type;
+                let title = '', items = [];
+                if (type === 'point' || point) {
+                    const pointName = point === '1' ? 'Точка 1 (Объект образования отходов)' :
+                                    point === '2' ? 'Точка 2 (Объект утилизации отходов)' :
+                                    point === '3' ? 'Точка 3 (Покупатель)' :
+                                    'Точка ' + point;
+                    title = pointName;
+                    items = [
+                        'Показать отходы на точке',
+                        'История отходов',
+                        'Отправить на переработку',
+                        'План вывоза'
+                    ];
+                    if (point === '2') {
+                        items.push('Акт(ы) об утилизации');
+                    }
+                    items.push('Объект на карте');
+                } else if (type === 'fine') {
+                    title = 'Штрафы';
+                    items = [
+                        'Список нарушений',
+                        'Оплатить штраф',
+                        'Акт проверки',
+                        'Статистика нарушений',
+                        'Статистика по ГРЗ'
+                    ];
+                } else if (type === 'photo') {
+                    title = 'Фотоотчёт';
+                    // При клике на кнопку Фотоотчёт сразу открываем меню рейсов
+                    openPhotoReportMenu();
+                    return;
+                } else if (type === 'history') {
+                    title = 'История маршрутов';
+                    items = ['Все маршруты', 'Отчёт по маршрутам', 'График вывоза'];
+                } else if (type === 'gisedp') {
+                    title = 'ГИС ЭПД';
+                    items = ['Отправить', 'История'];
+                } else if (type === 'action') {
+                    switch (action) {
+                        case 'Загрузка': title = 'Загрузка'; items = ['Начать загрузку', 'Журнал загрузок', 'Контроль веса', 'Отчёт по загрузке']; break;
+                        case 'Весы': title = 'Весы'; items = ['Текущий вес', 'История взвешиваний', 'Отчёт по весам', 'Калибровка весов']; break;
+                        case 'Маршрут': title = 'Маршрут'; items = ['Построить маршрут', 'Оптимизировать']; break;
+                        case 'Лидар': title = 'Лидар'; items = ['Сканировать зону', 'История сканирований', 'Отчёт по объёму']; break;
+                        default: title = action || 'Действие'; items = ['Выполнить', 'История', 'Отчёт'];
+                    }
+                } else { title = 'Меню'; items = ['Действие 1', 'Действие 2']; }
+                if (navigator.vibrate) navigator.vibrate(15);
+                openMenu(title, items);
+            });
+        });
+
+        // --- Загрузка ---
+        window.addEventListener('load', function() {
+            loginInput.focus();
+        });
+
+        // --- Escape ---
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (photoFullscreen.classList.contains('active')) {
+                    closeFullscreenFn();
+                } else if (infoOverlay.classList.contains('active')) {
+                    closeInfo();
+                } else if (docMenuOverlay.classList.contains('active')) {
+                    closeDocMenu();
+                } else if (menuOverlay.classList.contains('active')) {
+                    closeMenu();
+                } else if (locationMenuOverlay.classList.contains('active')) {
+                    closeLocationMenu();
+                } else if (profileMenuOverlay.classList.contains('active')) {
+                    closeProfileMenu();
+                }
+            }
+        });
+
+    })();
+</script>
+
+</body>
+</html>
